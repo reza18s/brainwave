@@ -42,6 +42,9 @@ export default function Header() {
               <a
                 key={item.id}
                 href={item.url}
+                onClick={() =>
+                  isOpen && (setIsOpen(false) || enablePageScroll())
+                }
                 className={`nav relative block px-6 py-6 font-code text-2xl  uppercase transition-colors hover:translate-y-1 hover:text-[23px] hover:text-color-1 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold lg:hover:text-[11px] ${item.onlyMobile ? "lg:hidden" : ""} ${hash === item.url ? "z-2 lg:text-n-1" : "lg:text-n-1/50"}`}
               >
                 {item.title}
@@ -68,7 +71,7 @@ export default function Header() {
               : disablePageScroll()
           }
         >
-          <MenuSvg></MenuSvg>
+          <MenuSvg openNavigation={isOpen}></MenuSvg>
         </Button>
       </div>
     </div>
