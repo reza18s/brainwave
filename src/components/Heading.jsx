@@ -1,13 +1,23 @@
 import TagLine from "./Tagline";
 
-const Heading = ({ className, title, text, tag }) => {
+const Heading = ({ className, title, text, tag, classNameChildren }) => {
   return (
     <div
-      className={`${className} max-w-[50rem] mx-auto mb-12 lg:mb-20 md:text-center`}
+      className={`${className} mx-auto mb-12 max-w-[50rem] md:text-center lg:mb-20`}
     >
       {tag && <TagLine className="mb-4 md:justify-center">{tag}</TagLine>}
-      {title && <h2 className="h2">{title}</h2>}
-      {text && <p className="body-2 mt-4 text-n-4">{text}</p>}
+      {title && (
+        <h2 className={`h2 ${classNameChildren ? classNameChildren : ""}`}>
+          {title}
+        </h2>
+      )}
+      {text && (
+        <p
+          className={`${classNameChildren ? classNameChildren : ""} body-2 mt-4  text-n-4 `}
+        >
+          {text}
+        </p>
+      )}
     </div>
   );
 };

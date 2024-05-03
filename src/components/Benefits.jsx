@@ -16,7 +16,6 @@ const Benefits = () => {
       batchMax: window.innerWidth > 1350 ? 3 : 2,
       start: "top 80%",
       onEnter: (batch) => {
-        console.log(batch);
         gsap.to(batch, {
           opacity: 1,
           scale: 1,

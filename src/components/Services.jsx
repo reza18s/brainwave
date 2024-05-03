@@ -8,14 +8,61 @@ import {
   VideoBar,
   VideoChatMessage,
 } from "./design/Services";
-
 import Generating from "./Generating";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { ScrollParallax } from "react-just-parallax";
+gsap.registerPlugin(ScrollTrigger);
 
 const Services = () => {
+  useGSAP(() => {
+    gsap.to(".des", {
+      scrollTrigger: { trigger: ".des", start: "top 70%" },
+      opacity: 1,
+      y: 0,
+      x: 0,
+      stagger: 0.5,
+    });
+    gsap.to(".des2", {
+      scrollTrigger: { trigger: ".des2", start: "top 70%" },
+      opacity: 1,
+      y: 0,
+      x: 0,
+      stagger: 0.5,
+    });
+    gsap.to(".des3", {
+      scrollTrigger: { trigger: ".des3", start: "top 70%" },
+      opacity: 1,
+      y: 0,
+      x: 0,
+      stagger: 0.5,
+    });
+    gsap.to(".list", {
+      scrollTrigger: { trigger: ".list", start: "top 70%" },
+      opacity: 1,
+      x: 0,
+      stagger: 0.2,
+    });
+    gsap.to(".generating2", {
+      scrollTrigger: { trigger: ".generating2", start: "top 80%" },
+      opacity: 1,
+      scale: 1,
+      delay: 1,
+    });
+    gsap.to(".icons2", {
+      scrollTrigger: { trigger: ".icons2", start: "top 80%" },
+      opacity: 1,
+      scale: 1,
+      delay: 1,
+      stagger: { from: "center", amount: 0.5 },
+    });
+  });
   return (
     <Section id="how-to-use">
       <div className="container">
         <Heading
+          classNameChildren="des translate-y-10 opacity-0"
           title="Generative AI made for creators."
           text="Brainwave unlocks the potential of AI-powered applications"
         />
@@ -33,15 +80,17 @@ const Services = () => {
             </div>
 
             <div className="relative z-1 ml-auto max-w-[17rem]">
-              <h4 className="h4 mb-4">Smartest AI</h4>
-              <p className="body-2 mb-[3rem] text-n-3">
+              <h4 className="list h4 mb-4 translate-x-10 opacity-0">
+                Smartest AI
+              </h4>
+              <p className="list body-2 mb-[3rem] translate-x-10 translate-y-10 opacity-0">
                 Brainwave unlocks the potential of AI-powered applications
               </p>
               <ul className="body-2">
                 {brainwaveServices.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-start border-t border-n-6 py-4"
+                    className="list flex translate-x-10 items-start border-t border-n-6 py-4 opacity-0"
                   >
                     <img width={24} height={24} src={check} />
                     <p className="ml-4">{item}</p>
@@ -50,7 +99,7 @@ const Services = () => {
               </ul>
             </div>
 
-            <Generating className="lg-right-auto absolute bottom-4 left-4 right-4 border border-n-1/10 lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2" />
+            <Generating className="generating2 lg-right-auto absolute bottom-4 left-4 right-4 scale-0 border border-n-1/10 opacity-0 lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2" />
           </div>
 
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">
@@ -66,8 +115,10 @@ const Services = () => {
               </div>
 
               <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-b from-n-8/0 to-n-8/90 p-8 lg:p-15">
-                <h4 className="h4 mb-4">Photo editing</h4>
-                <p className="body-2 mb-[3rem] text-n-3">
+                <h4 className="des2 h4 mb-4 -translate-x-10 opacity-0">
+                  Photo editing
+                </h4>
+                <p className=" des2 body-2 mb-[3rem] -translate-x-10 text-n-3 opacity-0">
                   Automatically enhance your photos using our AI app&apos;s
                   photo editing feature. Try it now!
                 </p>
@@ -78,8 +129,10 @@ const Services = () => {
 
             <div className="overflow-hidden rounded-3xl bg-n-7 p-4 lg:min-h-[46rem]">
               <div className="px-4 py-12 xl:px-8">
-                <h4 className="h4 mb-4">Video generation</h4>
-                <p className="body-2 mb-[2rem] text-n-3">
+                <h4 className="des3 h4 mb-4 translate-y-10 opacity-0">
+                  Video generation
+                </h4>
+                <p className="des3 body-2 mb-[2rem] translate-y-10 text-n-3 opacity-0">
                   The world’s most powerful AI photo and video art generation
                   engine. What will you create?
                 </p>
@@ -88,7 +141,7 @@ const Services = () => {
                   {brainwaveServicesIcons.map((item, index) => (
                     <li
                       key={index}
-                      className={`flex items-center justify-center rounded-2xl ${
+                      className={`icons2 flex scale-50 items-center justify-center rounded-2xl opacity-0 ${
                         index === 2
                           ? "h-[3rem] w-[3rem] bg-conic-gradient p-0.25 md:h-[4.5rem] md:w-[4.5rem]"
                           : "flex h-10 w-10 bg-n-6 md:h-15 md:w-15"
@@ -117,7 +170,9 @@ const Services = () => {
                   alt="Scary robot"
                 />
 
-                <VideoChatMessage />
+                <ScrollParallax isAbsolutelyPositioned>
+                  <VideoChatMessage />
+                </ScrollParallax>
                 <VideoBar />
               </div>
             </div>

@@ -30,6 +30,7 @@ const Hero = () => {
     gsap.to(".generating", {
       scrollTrigger: {
         trigger: ".generating",
+        toggleActions: "play none restart none",
         start: "top 70%",
       },
       opacity: 1,
@@ -39,6 +40,7 @@ const Hero = () => {
     gsap.to(".notification", {
       scrollTrigger: {
         trigger: ".notification",
+        toggleActions: "play none restart none",
         start: "top 70%",
       },
       duration: 0.5,
@@ -48,6 +50,7 @@ const Hero = () => {
     gsap.to(".icons", {
       scrollTrigger: {
         trigger: ".icons",
+        toggleActions: "play none restart none",
         start: "top 70%",
       },
       duration: 0.5,
