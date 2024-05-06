@@ -8,16 +8,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PricingList = () => {
   useGSAP(() => {
-    gsap.to(".plist", {
-      scrollTrigger: {
-        trigger: ".plist",
-        start: "top bottom",
-        end: "top top",
-        scrub: 0,
-      },
-      x: 0,
-      duration: 1,
-    });
+    if (window.innerWidth > 1023) {
+      gsap.to(".plist", {
+        scrollTrigger: {
+          trigger: ".plist",
+          start: "top bottom",
+          end: "top 30%",
+          scrub: 0,
+        },
+        x: 0,
+        duration: 1,
+      });
+    } else {
+      gsap.to(".plist", {
+        scrollTrigger: {
+          trigger: ".plist",
+          start: "top bottom",
+          // end: "top top",
+          // scrub: 0,
+        },
+        x: 0,
+        duration: 1,
+      });
+    }
   });
   return (
     <div className="flex gap-[1rem] max-lg:flex-wrap">

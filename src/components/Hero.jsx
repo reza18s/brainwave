@@ -70,7 +70,8 @@ const Hero = () => {
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 mx-auto mb-[3.875rem] max-w-[62rem] text-center md:mb-20 lg:mb-[6.25rem]">
           <h1 className="title h1  mb-6 translate-y-8 opacity-0">
-            Explore the Possibilities of&nbsp;AI&nbsp;Chatting with {` `}
+            Explore the <mark className="bg-purple-500/90">Possibilities</mark>{" "}
+            of&nbsp;AI&nbsp;Chatting with{" "}
             <span className="relative inline-block">
               <div className="flex flex-row">
                 {"Brainwave".split("").map((el, index) => (

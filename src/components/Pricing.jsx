@@ -40,7 +40,7 @@ const Pricing = () => {
 
         <div className="mt-10 flex justify-center">
           <a
-            className="border-b font-code text-xs font-bold uppercase tracking-wider"
+            className="border-b font-code text-xs font-bold uppercase tracking-wider hover:text-purple-800"
             href="/pricing"
           >
             See the full details
