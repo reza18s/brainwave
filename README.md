@@ -828,9 +828,7 @@ export default Roadmap;
 </details>
 
 ## <a name="links">🔗 Links</a>
-
-- [Assets](https://drive.google.com/file/d/1JKzwPl_hnpjIlNbwfjMagb4HosxnyXbf/view?usp=sharing)
 - [Design](https://drive.google.com/file/d/15WJMOchujvaQ7Kg9e0nGeGR7G7JOeX1K/view?usp=sharing)
-- [Live Website]((https://brainwave-me.netlify.app/))
+- [Live Website](https://brainwave-me.netlify.app/)
 
 #
